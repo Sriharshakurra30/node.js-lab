@@ -1,0 +1,247 @@
+EXPERIMENT 3:
+Write a java script code to validate user registration and login form.
+PROCEDURE:
+Use simple form template for your website and add the following steps
+Step1: Bootstrap Form Layouts
+Step2: Wrap labels and form controls in <div class="form-group">
+Step3: Form controls automatically receive some global styling with
+Bootstrap:All
+textual <input>, <textarea>, and <select> elements with
+class .form-control have a widthof 100%.
+Step4: Add a wrapper element with .form-group, around each
+form control, to ensure propermargins:
+Step5: You can use different validation classes to provide
+valuable feedback to users.
+Add either .was-validated or .needs-validation to the
+<form> element, depending on whether you want to
+provide validation feedback before or after submitting the
+form. The input fields will have a green (valid) or red
+(invalid) border to indicate what's missing in the form.
+You can also add a .valid-feedback or .invalid-feedback
+message to tell the user explicitly what's missing, or needs
+to be done before submitting the form.
+Step6: Disable form submissions if there are invalid fields
+
+Source code:-
+Create folder week3 inside create two html files.
+1 file registration.html
+2 file success.html
+3 file login.html
+4 file success2.html
+Add two images same folder.
+Code❤️Registration.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,
+initial-scale=1.0">
+<title>Registration Page</title>
+//❤️css Design part
+<style>
+fieldset{
+width:500px;
+background-image:url(n1.jpg);
+background-repeat:no-repeat;
+background-size:cover;
+}
+table tr td{
+padding-top:6px;
+padding-bottom:6px;
+}
+body{
+color:white;
+}
+</style>
+//❤️validation using java script code
+<script>
+function validate(){
+let fn=frm.fname.value;
+for(let x in fn){
+let ch=fn.charCodeAt(x);
+if(ch<65||ch>90 && ch<97||ch>122)
+{
+alert("Invalid firstname");
+return false;
+}
+}
+let fn1=frm.lname.value;
+
+for(let x in fn1){
+let ch=fn1.charCodeAt(x);
+if(ch<65||ch>90 && ch<97||ch>122)
+{
+alert("Invalid Lastname");
+return false;
+}
+}
+let phn=frm.phone.value;
+let len=phn.length;
+if(len!==10)
+{
+alert("phone no. should be exactly 10 digits");
+return false;
+}
+let reg="@";
+let mail=frm.email.value;
+if(reg.test(mail))
+{
+alert("Invalid mail");
+return false;
+}
+let p1=frm.pwd.value;
+let p2=p1.length;
+if(p2>8)
+{
+alert("Password should not exceed 8 digits");
+return false;
+}
+return true;
+}
+</script>
+</head>
+
+//❤️creating registration form
+
+<body style="background-image:url(nature.jpg);background-
+repeat:no-repeat;background-size:cover">
+
+<center>
+<h2>Registration</h2>
+<form name="frm" method="post" action="success.html"
+onSubmit="return validate()">
+<fieldset>
+<table>
+<tr><td>First Name:</td><td><input type="text"
+name="fname" value="" required/> </td></tr>
+<tr><td>Last Name:</td><td><input type="text"
+name="lname" value="" required/> </td></tr>
+<!--<label for="num">Phone No.:</label>
+<input type="tel" name="Mobile" id="num" maxlength="10"
+placeholder="Enter user Mobile No." required />-->
+<tr><td>Phone no.:</td><td><input type="number"
+name="phone" value="" required/> </td></tr>
+<tr><td>Mail Id:</td><td><input type="email"
+name="mailid" value="" required/> </td></tr>
+<tr><td>Gender:</td>
+<td>Male:<input type="radio" name="gender"
+value="male"/> </td>
+<td>Female:<input type="radio" name="gender"
+value="female"/> </td>
+</tr>
+<tr><td>DOB:</td><td><input type="date" name="dob"
+required/> </td></tr>
+<tr><td>User Name:</td><td><input type="text"
+name="uname" value="" required/> </td></tr>
+<tr><td>Password:</td><td><input type="password"
+name="pwd" value="" required/> </td></tr>
+<tr><td>Age:</td><td><input type="number" name="age"
+value="" required/> </td></tr>
+</table>
+
+<input type="submit" value="Registration"
+name="submit"/>
+//login button if existing user
+<a href="login.html"><input type="button" value="login"
+name="submit"/></a>
+</fieldset>
+<p>Copyright CMRIT_2024</p>
+</form>
+</center>
+</body>
+</html>
+Code:-❤️Success.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,
+initial-scale=1.0">
+<title>Document</title>
+</head>
+<body>
+<h2>Registration Successfull</h2>
+</body>
+</html>
+Code:-❤️login.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-
+scale=1.0">
+
+<title>Document</title>
+//❤️css Design part
+<style>
+fieldset{
+
+width:500px;
+background-image:url(nature.jpg);
+background-repeat:no-repeat;
+background-size:cover;
+}
+table tr td{
+padding-top:6px;
+padding-bottom:6px;
+}
+</style>
+//❤️validation using java script code
+<script>
+function validate(){
+let p1=frm.pwd.value;
+let p2=p1.length;
+if(p2>8)
+{
+alert("Password should not exceed 8 digits");
+return false;
+}
+return true;
+}
+</script>
+</head>
+//❤️creating login form
+
+<body style="background-image:url(n1.jpg);background-repeat:no-
+repeat;background-size:cover">
+
+<center>
+<h2>Login</h2>
+<form name="frm" method="post" action="abc.html" onSubmit="return
+validate()">
+<fieldset>
+<table>
+<tr><td>User Name:</td><td><input type="text" name="uname"
+value="" required/> </td></tr>
+<tr><td>Password:</td><td><input type="password" name="pwd"
+value="" required/> </td></tr>
+
+</table>
+<input type="submit" value="Login" name="submit"/>
+//registration button if new user
+<a href="Registration.html"><input type="button" value="Registration"
+name="submit"/></a>
+</fieldset>
+<p>Copyright CMRIT_2024</p>
+</form>
+</center>
+</body>
+</html>
+
+Code:-❤️Success2.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-
+scale=1.0">
+
+<title>Document</title>
+</head>
+<body>
+<h2>Login Successfull</h2>
+</body>
+</html>
