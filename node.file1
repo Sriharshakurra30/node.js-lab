@@ -1,0 +1,38 @@
+EXPERIMENT 1:
+Demonstrate version control in Git and Github using simple html code.
+PROCEDURE
+Step1: Downloading and Installing Git (go to https://git-scm.com/downloads )
+To configure Git, we need to specify the name, email address, and branch by using the
+git config - -global command.
+Step2: Open a cmd window or terminal on your computer and execute all commands.
+
+git --version
+git config --global user.name "Your Name"
+git config --global user.email <your email
+address>
+git config --list
+git init
+git status
+git add .
+git commit -m "first commit"
+git log --oneline
+git checkout <second commit's number>
+index.html
+git remote add origin <repository URL>
+git push -u origin master
+git clone <repository URL>
+Syntaxes of some git commands:
+git config --global user.name “ [username]”
+git config --global user.email [email address]
+git init = to start git in your Project.
+git add (file name)= adds the name of the particular file you want to commit in the staging
+area.
+git commit –m “first commit”
+git clone (repository name)= to copy an existing repository in another location to the
+current location.
+git push (remote storage name)= to upload/push files from the local repository/storage to
+another storage.
+git rm (filename) = to remove a file from a working repository
+git branch = to check the current branch you are working on, either main or master
+ Get familiar with version control, git and GitHub
+ Create your own repository and project folder structure
